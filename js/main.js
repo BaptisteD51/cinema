@@ -35,6 +35,7 @@ async function formSubmitHandler(e){
     let coords = await getCoordsFromAdress(adress)
     let cinemas = await getNearbyCinema(coords.latitude, coords.longitude, distance)
 
+    // add a property that indicate the distance between the user location and the cinema
     cinemas = cinemas.map(function(cinema){
         let latitudeH = coords.latitude
         let longitudeH = coords.longitude
@@ -67,7 +68,7 @@ async function formSubmitHandler(e){
 
 form.addEventListener("submit", (e) => formSubmitHandler(e))
 
-// Find distance between cinema and home
+// Find distance between cinema and home - Pythagorys theorema
 function distanceBetween(latitudeH, longitudeH, latitudeC, longitudeC){
     let d1 = latitudeH - latitudeC
     let d2 = longitudeH - longitudeC
