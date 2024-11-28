@@ -49,8 +49,6 @@ async function formSubmitHandler(e){
         return a.distanceWithHome - b.distanceWithHome
     })
 
-    console.log(cinemas)
-
     let html = cinemas.map((cinema)=>{
         return `
             <li>
